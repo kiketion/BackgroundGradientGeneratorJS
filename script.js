@@ -14,11 +14,11 @@ function setGradient() {
 
 function randomColor() {
   let letters = '0123456789ABCDEF';
-  let color = '#';
+  let newColor = '#';
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
-  return color;
+  return newColor;
 }
 
 function randomGradient() {
