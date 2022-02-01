@@ -11,3 +11,12 @@ function setGradient() {
     'linear-gradient(to right, ' + color1.value + ', ' + color2.value + ')';
   css.textContent = body.style.background;
 }
+
+function randomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
