@@ -5,3 +5,9 @@ let body = document.getElementById('gradient');
 let random = document.getElementById('random');
 let auto = document.getElementById('auto');
 let stop = document.getElementById('stop');
+
+function setGradient() {
+  body.style.background =
+    'linear-gradient(to right, ' + color1.value + ', ' + color2.value + ')';
+  css.textContent = body.style.background;
+}
