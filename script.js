@@ -20,3 +20,20 @@ function randomColor() {
   }
   return color;
 }
+
+function randomGradient() {
+  color1.value = randomColor();
+  color2.value = randomColor();
+  setGradient();
+}
+
+color1.addEventListener('input', setGradient);
+color2.addEventListener('input', setGradient);
+random.addEventListener('click', randomGradient);
+
+auto.addEventListener('click', function () {
+  let interval = setInterval(randomGradient, 4000);
+});
+stop.onmousedown = function () {
+  clearInterval(interval);
+};
