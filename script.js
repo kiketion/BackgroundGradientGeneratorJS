@@ -5,18 +5,20 @@ let body = document.getElementById('gradient');
 let random = document.getElementById('random');
 let auto = document.getElementById('auto');
 let stop = document.getElementById('stop');
+let interval;
 
 function setGradient() {
+  console.log(body);
   body.style.background =
     'linear-gradient(to right, ' + color1.value + ', ' + color2.value + ')';
-  css.textContent = body.style.background;
+  css.textContent = body.style.background + ';';
 }
 
 function randomColor() {
   let letters = '0123456789ABCDEF';
   let newColor = '#';
   for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+    newColor += letters[Math.floor(Math.random() * 16)];
   }
   return newColor;
 }
@@ -32,8 +34,8 @@ color2.addEventListener('input', setGradient);
 random.addEventListener('click', randomGradient);
 
 auto.addEventListener('click', function () {
-  let interval = setInterval(randomGradient, 4000);
+  interval = setInterval(randomGradient, 4000);
 });
-stop.onmousedown = function () {
+stop.onclick = function () {
   clearInterval(interval);
 };
